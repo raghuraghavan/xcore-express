@@ -2,6 +2,10 @@
 
 A lightweight library that brings middlewares to handle error reporting in web applications using [Node](https://nodejs.org) and [Express](http://expressjs.com).
 
+## Dependencies
+
+- [Exception.io](https://github.com/zmian/Exception.io)
+
 ## Guide
 
 A reference guide to middlewares and helper functions included in xcore.

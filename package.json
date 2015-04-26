@@ -1,7 +1,7 @@
 {
   "name": "xcore-express",
+  "version": "1.0.1",
   "description": "A lightweight library that brings middlewares to handle error reporting in web applications using Node and Express.",
-  "version": "0.0.1",
   "author": {
     "name": "Zeeshan Mian",
     "url": "http://zmian.me"
@@ -12,7 +12,7 @@
       "url": "http://zmian.me"
     }
   ],
-  "homepage": "http://zmian.me",
+  "homepage": "https://github.com/zmian/xcore-express",
   "main": "xcore.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -38,9 +38,7 @@
     "logger",
     "xcore"
   ],
-  "dependencies": {},
-  "devDependencies": {},
-  "readmeFilename": "README.md",
-  "_id": "xcore-express@0.0.1",
-  "_from": "xcore-express@~0.0.1"
+  "dependencies": {
+    "xcore-exceptions": "~1.0.0"
+  }
 }

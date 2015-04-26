@@ -3,7 +3,7 @@
  * @author Zeeshan Mian
  * @link https://github.com/zmian/xcore-express
  */
-var exceptions = require('./lib/exceptions');
+var exceptions = require('xcore-exceptions');
 
 module.exports = {
   Logger:                    require('./middlewares/logger'),

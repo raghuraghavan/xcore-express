@@ -8,7 +8,7 @@
 /**
  * Module Dependencies
  */
-var xcoreExceptions = require('../lib/exceptions');
+var xcoreExceptions = require('xcore-exceptions');
 
 /**
  * Colors
