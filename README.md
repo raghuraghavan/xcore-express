@@ -4,9 +4,25 @@ A lightweight library that brings middlewares to handle error reporting in web a
 
 ## Dependencies
 
-- [Exception.io](https://github.com/zmian/Exception.io)
+- [Exception.io: xcore-exceptions](https://github.com/zmian/Exception.io)
 
-## Guide
+## Installation
+
+```sh
+$ npm install xcore-express
+```
+
+```js
+var express = require('express');
+var app = express();
+var xcore = require('xcore-express');
+
+// Load the xcore error logger and handler middlewares
+app.use(xcore.Logger);
+app.use(xcore.ErrorHandler);
+```
+
+## Usage
 
 A reference guide to middlewares and helper functions included in xcore.
 
@@ -30,37 +46,50 @@ A reference guide to middlewares and helper functions included in xcore.
 
 ### Middlewares
 
-##### ErrorHandler
+#### Exception:
 
-A middleware to detect error type and send a JSON response with approperiate HTTP Status code and message.
+Use any of the aforementioned classes to throw an execption and the middlewares will automagically catch and format them appropriately.
 
-Usage:
+```js
+var xcore = require('xcore-express');
 
-    if (!req.isAuthenticated()) {
-      throw new UnauthenticatedException("Authentication is required.");
-    }
+if (!req.isAuthenticated()) {
+  throw new xcore.UnauthenticatedException("Authentication is required.");
+}
+```
 
+#### ErrorHandler
+
+A middleware to detect an error type and send a JSON response with approperiate HTTP Status code and message.
 
 Example response:
 
-    {
-      "meta": {
-        "code": 401,
-        "success": false,
-        "message": "Authentication is required."
-      }
-    }
+```js
+{
+  "meta": {
+    "code": 401,
+    "success": false,
+    "message": "Authentication is required."
+  }
+}
+```
 
-##### Logger
+![Browser Screenshot](/resources/browser-screenshot.png)
+
+#### Logger
 
 A middleware to format and log errors to console.
 
 Sample console log:
 
-    >> GET /api/users/me
-    >> [UnauthenticatedException] Authentication is required.
-    >> [Error]
-    >> ... stack trace ...
+```sh
+>> GET /api/users/me
+>> [UnauthenticatedException] Authentication is required.
+>> [Error]
+>> ... stack trace ...
+```
+
+![Console Screenshot](/resources/console-screenshot.png)
 
 ## Creator
 
